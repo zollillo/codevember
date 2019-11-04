@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>codevember 2019 | 04 - BIG</title>
+    <style media="screen">
+      body {
+        margin: 0;
+      }
+      .wrapper {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+      }
+
+      .wrapper::after {
+        position: absolute;
+        top: 50px;
+        left: 500px;
+        content: '#'
+      }
+
+      /* Inspired and borrowed from:
+         https://colourarchive.wordpress.com/2014/07/17/css-rotation-animation/
+      */
+      .bone {
+        position: absolute;
+        top: 50px;
+        left: 500px;
+        margin: 0 auto;
+        width: 15px;
+        height: 200px;
+        background: #bada55;
+        /* transform-origin: 7.5px 100px; */
+      }
+
+      @-webkit-keyframes rotate1 {
+        0% {
+          -webkit-transform:rotate(0);
+        }
+        100% {
+          -webkit-transform:rotate(360deg);
+        }
+      }
+      @-webkit-keyframes rotate2 {
+        0% {
+          -webkit-transform:rotate(30deg);
+        }
+        100% {
+          -webkit-transform:rotate(390deg);
+        }
+      }
+      @-webkit-keyframes rotate3 {
+        0% {
+          -webkit-transform:rotate(60deg);
+        }
+        100% {
+          -webkit-transform:rotate(420deg);
+        }
+      }
+      @-webkit-keyframes rotate4 {
+        0% {
+          -webkit-transform:rotate(90deg);
+        }
+        100% {
+          -webkit-transform:rotate(450deg);
+        }
+      }
+      @-webkit-keyframes rotate5 {
+        0% {
+          -webkit-transform:rotate(120deg);
+        }
+        100% {
+          -webkit-transform:rotate(480deg);
+        }
+      }
+      @-webkit-keyframes rotate6 {
+        0% {
+          -webkit-transform:rotate(150deg);
+        }
+        100% {
+          -webkit-transform:rotate(510deg);
+        }
+      }
+
+      .bone1 {
+        -webkit-animation:rotate1 7s linear infinite;
+      }
+      .bone2 {
+        -webkit-animation:rotate2 7s linear infinite;
+      }
+      .bone3 {
+        -webkit-animation:rotate3 7s linear infinite;
+      }
+      .bone4 {
+        -webkit-animation:rotate4 7s linear infinite;
+      }
+      .bone5 {
+        -webkit-animation:rotate5 7s linear infinite;
+      }
+      .bone6 {
+        -webkit-animation:rotate6 7s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <div class="bone bone1"></div>
+      <div class="bone bone2"></div>
+      <div class="bone bone3"></div>
+      <div class="bone bone4"></div>
+      <div class="bone bone5"></div>
+      <div class="bone bone6"></div>
+
+    </div>
+  </body>
+</html>
