@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>codevember 2019 | 04 - BIG</title>
     <style media="screen">
       body {
@@ -13,11 +13,38 @@
         position: relative;
       }
 
-      .wrapper::after {
+      .wheel {
+        position: relative;
+        height: calc(100% - 40px);
+        margin: 20px;
+        border: 1px solid lightgrey;
+      }
+
+      .hub {
         position: absolute;
-        top: 50px;
-        left: 500px;
-        content: '#'
+        background-color: #000;
+        width: 15px;
+        height: 15px;
+        border-radius: 99px;
+        top: 100px;
+        left: 50%;
+        transform: translate(0, -50%);
+      }
+      .hub::before,
+      .hub::after {
+        position: absolute;
+        display: block;
+        content: '';
+        background-color: #000;
+        width: 7.5px;
+        height: 150px;
+        transform-origin: top;
+      }
+      .hub::before {
+        transform: translate(3.75px, 3.75px) rotate(-30deg);
+      }
+      .hub::after {
+        transform: translate(3.75px, 3.75px) rotate(30deg);
       }
 
       /* Inspired and borrowed from:
@@ -25,94 +52,115 @@
       */
       .bone {
         position: absolute;
-        top: 50px;
-        left: 500px;
+        top: 0px;
+        left: 50%;
         margin: 0 auto;
         width: 15px;
         height: 200px;
-        background: #bada55;
+        background: tomato;
+
         /* transform-origin: 7.5px 100px; */
       }
 
-      @-webkit-keyframes rotate1 {
+      .bone::before,
+      .bone::after {
+        position: absolute;
+        left: 2.5px;
+        display: block;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 99px;
+        background-color: green;
+      }
+
+      .bone::before {
+        top: -10px;
+      }
+      .bone::after {
+        bottom: -10px;
+      }
+
+      @keyframes rotate1 {
         0% {
-          -webkit-transform:rotate(0);
+          transform: rotate(0);
         }
         100% {
-          -webkit-transform:rotate(360deg);
+          transform: rotate(360deg);
         }
       }
-      @-webkit-keyframes rotate2 {
+      @keyframes rotate2 {
         0% {
-          -webkit-transform:rotate(30deg);
+          transform: rotate(30deg);
         }
         100% {
-          -webkit-transform:rotate(390deg);
+          transform: rotate(390deg);
         }
       }
-      @-webkit-keyframes rotate3 {
+      @keyframes rotate3 {
         0% {
-          -webkit-transform:rotate(60deg);
+          transform: rotate(60deg);
         }
         100% {
-          -webkit-transform:rotate(420deg);
+          transform: rotate(420deg);
         }
       }
-      @-webkit-keyframes rotate4 {
+      @keyframes rotate4 {
         0% {
-          -webkit-transform:rotate(90deg);
+          transform: rotate(90deg);
         }
         100% {
-          -webkit-transform:rotate(450deg);
+          transform: rotate(450deg);
         }
       }
-      @-webkit-keyframes rotate5 {
+      @keyframes rotate5 {
         0% {
-          -webkit-transform:rotate(120deg);
+          transform: rotate(120deg);
         }
         100% {
-          -webkit-transform:rotate(480deg);
+          transform: rotate(480deg);
         }
       }
-      @-webkit-keyframes rotate6 {
+      @keyframes rotate6 {
         0% {
-          -webkit-transform:rotate(150deg);
+          transform: rotate(150deg);
         }
         100% {
-          -webkit-transform:rotate(510deg);
+          transform: rotate(510deg);
         }
       }
 
       .bone1 {
-        -webkit-animation:rotate1 7s linear infinite;
+        animation: rotate1 7s linear infinite;
       }
       .bone2 {
-        -webkit-animation:rotate2 7s linear infinite;
+        animation: rotate2 7s linear infinite;
       }
       .bone3 {
-        -webkit-animation:rotate3 7s linear infinite;
+        animation: rotate3 7s linear infinite;
       }
       .bone4 {
-        -webkit-animation:rotate4 7s linear infinite;
+        animation: rotate4 7s linear infinite;
       }
       .bone5 {
-        -webkit-animation:rotate5 7s linear infinite;
+        animation: rotate5 7s linear infinite;
       }
       .bone6 {
-        -webkit-animation:rotate6 7s linear infinite;
+        animation: rotate6 7s linear infinite;
       }
     </style>
   </head>
   <body>
-
     <div class="wrapper">
-      <div class="bone bone1"></div>
-      <div class="bone bone2"></div>
-      <div class="bone bone3"></div>
-      <div class="bone bone4"></div>
-      <div class="bone bone5"></div>
-      <div class="bone bone6"></div>
-
+      <div class="wheel">
+        <div class="bone bone1"></div>
+        <div class="bone bone2"></div>
+        <div class="bone bone3"></div>
+        <div class="bone bone4"></div>
+        <div class="bone bone5"></div>
+        <div class="bone bone6"></div>
+        <div class="hub"></div>
+      </div>
     </div>
   </body>
 </html>
