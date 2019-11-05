@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <title>codevember 2019 | 04 - BIG</title>
     <style media="screen">
+      :root {
+        --midnight: rgb(47, 47, 79);
+        --steelblue: rgb(35, 107, 142);
+        --seagreen: rgb(35, 142, 197);
+        --golden: rgb(219, 219, 112);
+      }
       body {
         margin: 0;
+        background: linear-gradient(
+        var(--midnight),
+        var(--steelblue), var(--seagreen), var(--golden));
       }
       .wrapper {
         height: 100vh;
@@ -20,65 +29,100 @@
         border: 1px solid lightgrey;
       }
 
+      .rim,
+      .inner-ring {
+        position: absolute;
+        content: '';
+        display: block;
+        box-sizing: border-box;
+        border-radius: 999px;
+      }
+
+      .rim {
+        top: -6px;
+        left: calc(50% - 133px);
+        border: 6px double black;
+        width: 272px;
+        height: 272px;
+      }
+
+      /* .inner-ring {
+        top: 43px;
+        left: calc(50% - 85px);
+        border: 4px double black;
+        width: 172px;
+        height: 172px;
+      } */
+
       .hub {
         position: absolute;
-        background-color: #000;
-        width: 15px;
-        height: 15px;
+        /* background-color: transparent;
+        border: 4px double black; */
+        background-color: black;
+        border: 4px double white;
+        width: 28px;
+        height: 28px;
         border-radius: 99px;
-        top: 100px;
-        left: 50%;
-        transform: translate(0, -50%);
+        top: 113px;
+        left: calc(50% - 16px);
       }
       .hub::before,
       .hub::after {
         position: absolute;
         display: block;
         content: '';
-        background-color: #000;
-        width: 7.5px;
-        height: 150px;
+        background-color: black;
+        width: 6px;
+        height: 170px;
         transform-origin: top;
       }
       .hub::before {
-        transform: translate(3.75px, 3.75px) rotate(-30deg);
+        transform: translate(16px, 16px) rotate(-24deg);
       }
       .hub::after {
-        transform: translate(3.75px, 3.75px) rotate(30deg);
+        transform: translate(6px, 16px) rotate(24deg);
+      }
+
+      .base {
+        position: absolute;
+        top: 278px;
+        left: calc(50% - 106px);
+        width: 212px;
+        height: 22px;
+        background-color: black;
       }
 
       /* Inspired and borrowed from:
          https://colourarchive.wordpress.com/2014/07/17/css-rotation-animation/
       */
-      .bone {
+      .spoke {
         position: absolute;
         top: 0px;
         left: 50%;
         margin: 0 auto;
-        width: 15px;
-        height: 200px;
-        background: tomato;
-
+        width: 4px;
+        height: 260px;
+        background: black;
         /* transform-origin: 7.5px 100px; */
       }
 
-      .bone::before,
-      .bone::after {
+      .spoke::before,
+      .spoke::after {
         position: absolute;
-        left: 2.5px;
+        left: -9px;
         display: block;
         content: '';
-        width: 10px;
-        height: 10px;
+        width: 22px;
+        height: 22px;
         border-radius: 99px;
-        background-color: green;
+        background-color: black;
       }
 
-      .bone::before {
-        top: -10px;
+      .spoke::before {
+        top: -14px;
       }
-      .bone::after {
-        bottom: -10px;
+      .spoke::after {
+        bottom: -14px;
       }
 
       @keyframes rotate1 {
@@ -130,22 +174,22 @@
         }
       }
 
-      .bone1 {
+      .spoke1 {
         animation: rotate1 7s linear infinite;
       }
-      .bone2 {
+      .spoke2 {
         animation: rotate2 7s linear infinite;
       }
-      .bone3 {
+      .spoke3 {
         animation: rotate3 7s linear infinite;
       }
-      .bone4 {
+      .spoke4 {
         animation: rotate4 7s linear infinite;
       }
-      .bone5 {
+      .spoke5 {
         animation: rotate5 7s linear infinite;
       }
-      .bone6 {
+      .spoke6 {
         animation: rotate6 7s linear infinite;
       }
     </style>
@@ -153,13 +197,16 @@
   <body>
     <div class="wrapper">
       <div class="wheel">
-        <div class="bone bone1"></div>
-        <div class="bone bone2"></div>
-        <div class="bone bone3"></div>
-        <div class="bone bone4"></div>
-        <div class="bone bone5"></div>
-        <div class="bone bone6"></div>
+        <div class="rim"></div>
+        <!-- <div class="inner-ring"></div> -->
+        <div class="spoke spoke1"></div>
+        <div class="spoke spoke2"></div>
+        <div class="spoke spoke3"></div>
+        <div class="spoke spoke4"></div>
+        <div class="spoke spoke5"></div>
+        <div class="spoke spoke6"></div>
         <div class="hub"></div>
+        <div class="base"></div>
       </div>
     </div>
   </body>
