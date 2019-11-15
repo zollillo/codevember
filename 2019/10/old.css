@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  box-shadow: inset 1px 1px 150px #704214;
+}
