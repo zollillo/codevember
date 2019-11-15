@@ -1,28 +1,49 @@
 :root {
-  --midnight: rgb(47, 47, 79);
-  --steelblue: rgb(35, 107, 142);
-  --seagreen: rgb(35, 142, 197);
+  --midnight: #071037;
+  --steelblue: #123764;
+  --seagreen: #1e6499;
   --golden: rgb(219, 219, 112);
 }
 body {
   margin: 0;
+}
+.page {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: black;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  height: 80%;
   background: linear-gradient(
     var(--midnight),
     var(--steelblue),
     var(--seagreen),
     var(--golden)
   );
+  /* box-shadow: inset 0px -70px 0px black; */
 }
-.wrapper {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+
+.big-title {
+  position: absolute;
+  top: 10%;
+  font-size: 3.5rem;
+  font-family: 'Pacifico', cursive;
+  color: var(--golden);
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
 }
 
 .wheel {
-  position: relative;
-  height: 100%;
-  box-shadow: inset 0px -70px 0px black;
+  width: 350px;
+  position: absolute;
+  top: calc(100% - 310px);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .rim,
@@ -52,14 +73,12 @@ body {
 
 .hub {
   position: absolute;
-  /* background-color: transparent;
-        border: 4px double black; */
   background-color: black;
-  border: 4px double white;
+  border: 4px double rgba(255, 255, 255, 0.6);
   width: 28px;
   height: 28px;
   border-radius: 99px;
-  top: 113px;
+  top: 112px;
   left: calc(50% - 16px);
 }
 .hub::before,
@@ -69,19 +88,19 @@ body {
   content: '';
   background-color: black;
   width: 6px;
-  height: 170px;
+  height: 180px;
   transform-origin: top;
 }
 .hub::before {
-  transform: translate(16px, 16px) rotate(-24deg);
+  transform: translate(16px, 16px) rotate(-22deg);
 }
 .hub::after {
-  transform: translate(6px, 16px) rotate(24deg);
+  transform: translate(6px, 16px) rotate(22deg);
 }
 
 .base {
   position: absolute;
-  top: 278px;
+  top: 288px;
   left: calc(50% - 106px);
   width: 212px;
   height: 22px;
@@ -170,20 +189,20 @@ body {
 }
 
 .spoke1 {
-  animation: rotate1 7s linear infinite;
+  animation: rotate1 15s linear infinite;
 }
 .spoke2 {
-  animation: rotate2 7s linear infinite;
+  animation: rotate2 15s linear infinite;
 }
 .spoke3 {
-  animation: rotate3 7s linear infinite;
+  animation: rotate3 15s linear infinite;
 }
 .spoke4 {
-  animation: rotate4 7s linear infinite;
+  animation: rotate4 15s linear infinite;
 }
 .spoke5 {
-  animation: rotate5 7s linear infinite;
+  animation: rotate5 15s linear infinite;
 }
 .spoke6 {
-  animation: rotate6 7s linear infinite;
+  animation: rotate6 15s linear infinite;
 }
