@@ -24,7 +24,6 @@ body {
     var(--seagreen),
     var(--golden)
   );
-  /* box-shadow: inset 0px -70px 0px black; */
 }
 
 .big-title {
@@ -62,14 +61,6 @@ body {
   width: 272px;
   height: 272px;
 }
-
-/* .inner-ring {
-        top: 43px;
-        left: calc(50% - 85px);
-        border: 4px double black;
-        width: 172px;
-        height: 172px;
-      } */
 
 .hub {
   position: absolute;

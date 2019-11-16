@@ -20,7 +20,6 @@
     </svg>
     <div class="page">
       <div class="wrapper">
-        <h1 class="big-title">Giant wheel</h1>
         <svg width="100%" height="100%">
           <use href="#cloud" transform="scale(2,1)">
             <animate
@@ -54,22 +53,28 @@
               repeatCount="indefinite"
             />
           </use>
+          <use x="1000" y="150" href="#cloud" transform="scale(1.25, 0.9)">
+            <animate
+              attributeName="x"
+              values="1000;1010;1000"
+              dur="12s"
+              repeatCount="indefinite"
+            />
+          </use>
         </svg>
         <div class="wheel">
-          <div>
-            <div class="rim"></div>
-            <!-- <div class="inner-ring"></div> -->
-            <div class="spoke spoke1"></div>
-            <div class="spoke spoke2"></div>
-            <div class="spoke spoke3"></div>
-            <div class="spoke spoke4"></div>
-            <div class="spoke spoke5"></div>
-            <div class="spoke spoke6"></div>
-            <div class="hub"></div>
-            <div class="base"></div>
-          </div>
+          <div class="rim"></div>
+          <div class="spoke spoke1"></div>
+          <div class="spoke spoke2"></div>
+          <div class="spoke spoke3"></div>
+          <div class="spoke spoke4"></div>
+          <div class="spoke spoke5"></div>
+          <div class="spoke spoke6"></div>
+          <div class="hub"></div>
+          <div class="base"></div>
         </div>
       </div>
+      <h1 class="big-title">Giant wheel</h1>
     </div>
   </body>
 </html>
