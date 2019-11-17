@@ -1,10 +1,100 @@
+html {
+  font-size: 100%;
+}
 body {
+  font-family: 'IM Fell English', serif;
+  min-height: 100vh;
+  box-sizing: border-box;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: cornsilk;
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .wrapper {
-  height: 100vh;
-  width: 100vw;
+  flex: 1;
   position: relative;
   box-shadow: inset 1px 1px 150px #704214;
+}
+
+.container {
+  padding: 60px 30px 60px 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  font-family: 'IM Fell English SC', serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin: 48px 0;
+}
+
+h2 sup {
+font-size: 1rem;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.adornment {
+  text-align: center;
+  font-size: 3.125rem;
+  margin: 20px 0 0;
+}
+
+.adornment::after {
+  display: block;
+  content: '\2766';
+}
+
+/* https://css-tricks.com/snippets/css/drop-caps/ */
+.drop-cap::first-letter {
+  color: #903;
+  float: left;
+  font-size: 6rem;
+  padding: 6px 6px 0 0;
+}
+
+p:not(.adornment), 
+p:not(.drop-cap)::first-letter {
+  padding-left: 20px;
+}
+
+ol {
+  position: relative;
+  padding: 32px 0px 20px 30px;
+}
+
+ol::before {
+  position: absolute;
+  left: 20px;
+  display: block;
+  content: '';
+  width: 33%;
+  height: 1px;
+  background-color: currentColor;
+}
+
+li {
+  font-size: 0.875rem;
+  padding: 16px 0;
+}
+
+a {
+  color: inherit;
+}
+
+sup a {
+  text-decoration: none;
 }
