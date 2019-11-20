@@ -7,15 +7,33 @@
   - Key 'c': Toggle between fixed and random grid colors.
 */
 
-float gridLength = 12.5;
-float intensity = 1;
-boolean pulseColor = false;
+const gridLength = 12.5
+const intensity = 1
+const pulseColor = false
 
-void setup() {
-  size(400, 400);
-  background(209); 
-}
+const x = 400 / gridLength
+const y = 400 / gridLength
 
+// void setup() {
+//   size(400, 400);
+//   background(209);
+// }
+
+d3.select('svg')
+  .selectAll('rect')
+  .data(d3.range(x * y))
+  .enter()
+  .append('rect')
+  .attr('x', d => (d % x) * gridLength)
+  .attr('y', d => Math.floor(d / x) * gridLength)
+  .attr('width', gridLength)
+  .attr('height', gridLength)
+  .attr('stroke', '#fff')
+  .attr('fill', d =>
+    d3.hsl(intensity * d * gridLength, intensity * (y - d * gridLength), 100)
+  )
+
+/*
 void draw() {
   frameRate(2);
   // Define color with hue, saturation, brightness.
@@ -56,3 +74,4 @@ void keyPressed() {
     pulseColor = pulseColor ? false : true;
   }
 }
+*/
