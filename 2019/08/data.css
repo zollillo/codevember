@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body,
+body * {
+  box-sizing: border-box;
+}
+
+.donut-container {
+  width: 120px;
+  height: 120px;
+}
+
+.donut-ring,
+.donut-segment {
+  stroke-width: 4;
+}
