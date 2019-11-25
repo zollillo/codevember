@@ -2,6 +2,7 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -19,4 +20,19 @@ body * {
 .donut-ring,
 .donut-segment {
   stroke-width: 4;
+}
+
+.donut-segment {
+  animation-name: animate-dash;
+}
+
+/* 
+ * Omit the 'to' or '100%' declaration from '@keyframes' 
+ * to animate up to the value  set by the inline style.
+ * See: https://css-tricks.com/animate-to-an-inline-style/ 
+ */
+@keyframes animate-dash {
+  0% {
+    stroke-dasharray: 0, 100;
+  }
 }
