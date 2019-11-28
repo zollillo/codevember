@@ -12,6 +12,29 @@ const INITIAL_SEGMENT_OFFSET = 125
 const SVG_NAMESPACE_URI = 'http://www.w3.org/2000/svg'
 const ANIMATION_DURATION = 500
 
+// sweets:
+// lakritz, schokolade, bobons, lollis, kekse, eis
+// fruits:
+// banana, apple, strawberry, watermelon, grapes
+// = [{lakritz: color: '', value: 56, label: 'Licorice' ; }]
+// Top five fruits
+// const dataSet = {
+//   2018: [
+//     { value: 25, color: 'yellow', label: 'Banana' },
+//     { value: 19, color: 'red', label: 'Apple' },
+//     { value: 15, color: 'pink', label: 'Strawberry' },
+//     { value: 9, color: 'orange', label: 'Peach' },
+//     { value: 6, color: 'blue', label: 'Grapes' }
+//   ],
+//   2019: [
+//     { value: 28, color: 'yellow', label: 'Banana' },
+//     { value: 22, color: 'red', label: 'Apple' },
+//     { value: 10, color: 'pink', label: 'Strawberry' },
+//     { value: 10, color: 'orange', label: 'Watermelon' },
+//     { value: 5, color: 'blue', label: 'Pineapple' }
+//   ]
+// }
+
 const dataSet = [
   [
     { value: 80, color: '#374a9a' },
@@ -73,3 +96,5 @@ const createDonutSegments = data => {
 }
 
 document.getElementById('donut').appendChild(createDonutSegments(processedData))
+
+document.querySelector('form')

@@ -9,24 +9,42 @@
     <link rel="stylesheet" href="./data.css" />
   </head>
   <body>
-    <div class="donut-container">
-      <svg id="donut" viewBox="0 0 40 40">
-        <circle
-          class="donut-hole"
-          cx="20"
-          cy="20"
-          r="15.91549430918954"
-          fill="#fff"
-        ></circle>
-        <circle
-          class="donut-ring"
-          cx="20"
-          cy="20"
-          r="15.91549430918954"
-          fill="transparent"
-          stroke="#d2d3d4"
-        ></circle>
-        <!-- <g class="donut-segment-group">
+    <div class="container">
+      <form>
+        <p>Top five fruits dataset:</p>
+        <div>
+          <input
+            type="radio"
+            id="fruit-data-1"
+            name="fruit"
+            value="2018"
+            checked
+          />
+          <label for="fruit-data-1">2018</label>
+
+          <input type="radio" id="fruit-data-2" name="fruit" value="2019" />
+          <label for="fruit-data-2">2019</label>
+        </div>
+      </form>
+
+      <div class="donut-container">
+        <svg id="donut" viewBox="0 0 40 40">
+          <circle
+            class="donut-hole"
+            cx="20"
+            cy="20"
+            r="15.91549430918954"
+            fill="#fff"
+          ></circle>
+          <circle
+            class="donut-ring"
+            cx="20"
+            cy="20"
+            r="15.91549430918954"
+            fill="transparent"
+            stroke="#d2d3d4"
+          ></circle>
+          <!-- <g class="donut-segment-group">
           <circle
             class="donut-segment"
             cx="20"
@@ -58,7 +76,8 @@
               stroke-dashoffset="55"
             ></circle>
           </g> -->
-      </svg>
+        </svg>
+      </div>
     </div>
 
     <!-- JS -->
