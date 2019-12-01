@@ -19,14 +19,14 @@ const ANIMATION_DURATION = 500
 // = [{lakritz: color: '', value: 56, label: 'Licorice' ; }]
 // Top five fruits
 // const dataSet = {
-//   2018: [
+//   a: [
 //     { value: 25, color: 'yellow', label: 'Banana' },
 //     { value: 19, color: 'red', label: 'Apple' },
 //     { value: 15, color: 'pink', label: 'Strawberry' },
 //     { value: 9, color: 'orange', label: 'Peach' },
 //     { value: 6, color: 'blue', label: 'Grapes' }
 //   ],
-//   2019: [
+//   b: [
 //     { value: 28, color: 'yellow', label: 'Banana' },
 //     { value: 22, color: 'red', label: 'Apple' },
 //     { value: 10, color: 'pink', label: 'Strawberry' },

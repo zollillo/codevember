@@ -15,15 +15,15 @@
         <div>
           <input
             type="radio"
-            id="fruit-data-1"
+            id="fruit-data-a"
             name="fruit"
-            value="2018"
+            value="a"
             checked
           />
-          <label for="fruit-data-1">2018</label>
+          <label for="fruit-data-a">A</label>
 
-          <input type="radio" id="fruit-data-2" name="fruit" value="2019" />
-          <label for="fruit-data-2">2019</label>
+          <input type="radio" id="fruit-data-b" name="fruit" value="b" />
+          <label for="fruit-data-b">B</label>
         </div>
       </form>
 
@@ -81,6 +81,16 @@
     </div>
 
     <!-- JS -->
+    <script>
+        const inputs = document.querySelectorAll('form input');
+    
+        function handleUpdate() {
+          console.log(this.value)
+        }
+    
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        
+      </script>
     <script type="text/javascript" src="./data.js"></script>
   </body>
 </html>

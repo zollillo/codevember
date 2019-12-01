@@ -23,6 +23,29 @@ body * {
   }
 }
 
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 3em 0;
+  padding: 0;
+}
+
+.table-cell {
+  box-sizing: border-box;
+  /* flex-grow: 1; */
+  /* Default to full width */
+  /* width: 100%;   */
+  padding: 0.8em 1.2em;
+  overflow: hidden; /* Or flex might break */
+  list-style: none;
+  border: solid 3px white;
+  background: slategrey;
+}
+
+.table--5cols > .table-cell  { 
+  width: 20%;
+}
+
 .donut-container {
   width: 120px;
   height: 120px;
