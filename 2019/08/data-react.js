@@ -7,10 +7,10 @@ const R = C / (2 * Math.PI)
 const INITIAL_SEGMENT_OFFSET = 125
 
 const colorMap = {
-  a:'#253494',
-  b:'#2c7fb8',
-  c: '#41b6c4', 
-  d: '#a1dab4', 
+  a: '#253494',
+  b: '#2c7fb8',
+  c: '#41b6c4',
+  d: '#a1dab4',
   e: '#ffff99'
 }
 
@@ -40,54 +40,49 @@ const dataSet = {
 
 const DataTable = () => {
   return (
-    <table className="responsive-table mb-10" role="table">
-        <thead role="rowgroup">
-          <tr role="row">
-            <th role="columnheader"></th>
-            <th role="columnheader">A</th>
-            <th role="columnheader">B</th>
-            <th role="columnheader">C</th>
-            <th role="columnheader">D</th>
-            <th role="columnheader">E</th>
-          </tr>
-        </thead>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <td role="cell">
-              2017
-            </td>
-            {dataSet['2017'].map((d, i) => 
-              <td key={i} role="cell">
+    <table role="table">
+      <caption>Totally made up dummy data</caption>
+      <thead role="rowgroup">
+        <tr role="row">
+          <th role="columnheader">Year</th>
+          <th role="columnheader">A</th>
+          <th role="columnheader">B</th>
+          <th role="columnheader">C</th>
+          <th role="columnheader">D</th>
+          <th role="columnheader">E</th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        <tr role="row">
+          <td role="cell">2017</td>
+          {dataSet['2017'].map((d, i) => (
+            <td key={i} role="cell">
               {d.value}
-              </td>
-            )}
-          </tr>
-          <tr role="row">
-            <td role="cell">
-              2018
             </td>
-            {dataSet['2018'].map((d, i) => 
-              <td key={i} role="cell">
+          ))}
+        </tr>
+        <tr role="row">
+          <td role="cell">2018</td>
+          {dataSet['2018'].map((d, i) => (
+            <td key={i} role="cell">
               {d.value}
-              </td>
-            )}
-          </tr>
-          <tr role="row">
-            <td role="cell">
-              2019
             </td>
-            {dataSet['2019'].map((d, i) => 
-              <td key={i} role="cell">
+          ))}
+        </tr>
+        <tr role="row">
+          <td role="cell">2019</td>
+          {dataSet['2019'].map((d, i) => (
+            <td key={i} role="cell">
               {d.value}
-              </td>
-            )}
-          </tr>
-        </tbody>
-      </table>
+            </td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
   )
 }
 
-const Donut = ({data}) => {
+const Donut = ({ data }) => {
   const sum = data.reduce((acc, cur) => acc + cur.value, 0)
   const percentage = (value, total) => (100 * value) / total
   let accumulatedSegmentsLength = 0
@@ -95,12 +90,12 @@ const Donut = ({data}) => {
     // Just in case: sort by category (from a to e)
     .sort((a, b) => {
       if (a.category > b.category) {
-        return 1;
+        return 1
       }
       if (a.category < b.category) {
-        return -1;
+        return -1
       }
-      return 0;
+      return 0
     })
     .map(a => ({
       percentage: percentage(a.value, sum),
@@ -147,63 +142,68 @@ const Donut = ({data}) => {
           })}
         </g>
       </svg>
+      <div className="donut-legend">
+        {Object.keys(colorMap).map(c => {
+          return (
+            <span key={c} style={{ color: colorMap[c] }}>
+              <span>{c.toUpperCase()}</span>
+            </span>
+          )
+        })}
+      </div>
     </div>
   )
 }
 
-
 function App() {
-  const [selectedOption, setSelectedOption] = useState('2017');
-  const handleChange = (event) => {
+  const [selectedOption, setSelectedOption] = useState('2017')
+  const handleChange = event => {
     setSelectedOption(event.target.value)
   }
 
   return (
     <div className="container">
-      <div>
-      <DataTable />
-      <form>
-        <p>Top five fruits dataset:</p>
-        <div>
-          {/* 2017 */}
-          <input
-            type="radio"
-            id="category-data-2017"
-            name="category"
-            value="2017"
-            checked={selectedOption === '2017'}
-            onChange={handleChange}
-          />
-          <label htmlFor="category-data-2017">2017</label>
-          {/* 2018 */}
-          <input 
-            type="radio" 
-            id="category-data-2018" 
-            name="category" 
-            value="2018" 
-            checked={selectedOption === '2018'} 
-            onChange={handleChange}
-          />
-          <label htmlFor="category-data-2018">2018</label>
-          {/* 2019 */}
-          <input 
-            type="radio" 
-            id="category-data-2019" 
-            name="category" 
-            value="2019" 
-            checked={selectedOption === '2019'} 
-            onChange={handleChange}
-          />
-          <label htmlFor="category-data-2091">2019</label>
-        </div>
-      </form>
+      <div className="table-form-container">
+        <DataTable />
+        <form>
+          <p>Please switch data sets to see the donut chart transition:</p>
+          <div className="select-container">
+            <label>
+              <input
+                type="radio"
+                name="category"
+                value="2017"
+                checked={selectedOption === '2017'}
+                onChange={handleChange}
+              />
+              <span>2017</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="category"
+                value="2018"
+                checked={selectedOption === '2018'}
+                onChange={handleChange}
+              />
+              <span>2018</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="category"
+                value="2019"
+                checked={selectedOption === '2019'}
+                onChange={handleChange}
+              />
+              <span>2019</span>
+            </label>
+          </div>
+        </form>
       </div>
-      <Donut data={dataSet[selectedOption]}/>
+      <Donut data={dataSet[selectedOption]} />
     </div>
   )
 }
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'))
