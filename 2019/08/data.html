@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>codevember 2019 | 08 - DATA</title>
+
+    <link rel="stylesheet" href="./data.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <p>Top five fruits dataset:</p>
+        <div>
+          <input
+            type="radio"
+            id="fruit-data-a"
+            name="fruit"
+            value="a"
+            checked
+          />
+          <label for="fruit-data-a">A</label>
+
+          <input type="radio" id="fruit-data-b" name="fruit" value="b" />
+          <label for="fruit-data-b">B</label>
+        </div>
+      </form>
+
+      <div class="donut-container">
+        <svg id="donut" viewBox="0 0 40 40">
+          <circle
+            class="donut-hole"
+            cx="20"
+            cy="20"
+            r="15.91549430918954"
+            fill="#fff"
+          ></circle>
+          <circle
+            class="donut-ring"
+            cx="20"
+            cy="20"
+            r="15.91549430918954"
+            fill="transparent"
+            stroke="#d2d3d4"
+          ></circle>
+          <!-- <g class="donut-segment-group">
+          <circle
+            class="donut-segment"
+            cx="20"
+            cy="20"
+            r="15.91549430918954"
+            fill="transparent"
+            stroke="#ce4b99"
+            stroke-dasharray="40 60"
+            stroke-dashoffset="125"
+           ></circle>
+            <circle
+              class="donut-segment"
+              cx="20"
+              cy="20"
+              r="15.91549430918954"
+              fill="transparent"
+              stroke="#bada55"
+              stroke-dasharray="30 70"
+              stroke-dashoffset="85"
+            ></circle>
+            <circle
+              class="donut-segment"
+              cx="20"
+              cy="20"
+              r="15.91549430918954"
+              fill="transparent"
+              stroke="steelblue"     
+              stroke-dasharray="20 80"
+              stroke-dashoffset="55"
+            ></circle>
+          </g> -->
+        </svg>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        const inputs = document.querySelectorAll('form input');
+    
+        function handleUpdate() {
+          console.log(this.value)
+        }
+    
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        
+      </script>
+    <script type="text/javascript" src="./data.js"></script>
+  </body>
+</html>
